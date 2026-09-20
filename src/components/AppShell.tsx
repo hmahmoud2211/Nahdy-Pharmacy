@@ -21,8 +21,8 @@ export function AppShell({ active, onNavigate, children }: Props) {
         <AppHeader />
         <ScrollView
           style={{ flex: 1, backgroundColor: colors.background }}
-          contentContainerStyle={[styles.content, active === 'mdb' && styles.compactContent]}
-          showsVerticalScrollIndicator={active !== 'mdb'}
+          contentContainerStyle={[styles.content, styles.compactContent]}
+          showsVerticalScrollIndicator={false}
         >
           {children}
         </ScrollView>

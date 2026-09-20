@@ -7,6 +7,8 @@ import { HEADER_HEIGHT } from '../theme/spacing';
 
 const nahdiLogo = require('../../assets/logos/nahdi-logo.png');
 const siemensLogo = require('../../assets/logos/siemens-logo.png');
+const emsLogo = require('../../assets/ems-logo-crop.png');
+const secutronicLogo = require('../../assets/secutronic-logo-crop.png');
 
 function Selector({ label, value, options }: { label: string; value: string; options: string[] }) {
   const [open, setOpen] = useState(false);
@@ -64,6 +66,9 @@ export function AppHeader() {
           onChangeText={setSearch}
         />
       </View>
+
+      <Image source={emsLogo} style={styles.emsLogo} resizeMode="contain" />
+      <Image source={secutronicLogo} style={styles.secutronicLogo} resizeMode="contain" />
 
       <View style={styles.spacer} />
 
@@ -177,5 +182,13 @@ const styles = StyleSheet.create({
     width: 68,
     height: 20,
     marginLeft: 4,
+  },
+  emsLogo: {
+    width: 31,
+    height: 34,
+  },
+  secutronicLogo: {
+    width: 73,
+    height: 20,
   },
 });
