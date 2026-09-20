@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   compactContent: {
-    padding: 6,
-    gap: 5,
+    padding: 4,
+    gap: 3,
   },
 });

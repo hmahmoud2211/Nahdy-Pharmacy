@@ -135,11 +135,17 @@ export function Sidebar({ active, onNavigate }: { active: ScreenKey; onNavigate:
               section.items.map((item) => {
                 const Icon = item.icon;
                 const isActive = item.key && item.key === active;
+                const isEnabled = item.key === 'mdb';
                 return (
                   <Pressable
                     key={item.label}
-                    style={[styles.itemRow, isActive && styles.itemRowActive]}
-                    onPress={() => item.key && onNavigate(item.key)}
+                    disabled={!isEnabled}
+                    style={[
+                      styles.itemRow,
+                      isActive && styles.itemRowActive,
+                      !isEnabled && styles.itemRowDisabled,
+                    ]}
+                    onPress={() => isEnabled && item.key && onNavigate(item.key)}
                   >
                     <Icon size={12} color={section.color} />
                     <Text
@@ -205,6 +211,9 @@ const styles = StyleSheet.create({
   },
   itemRowActive: {
     backgroundColor: colors.primaryLight,
+  },
+  itemRowDisabled: {
+    opacity: 0.4,
   },
   sectionDivider: {
     height: 1,

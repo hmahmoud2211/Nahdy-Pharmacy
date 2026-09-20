@@ -101,12 +101,12 @@ const styles = StyleSheet.create({
     minWidth: 0,
   },
   compactBareHeaderRow: {
-    paddingVertical: 2,
+    paddingVertical: 1,
   },
   compactBannerHeader: {
-    height: 19,
+    height: 18,
   },
   compactContent: {
-    padding: 3,
+    padding: 2,
   },
 });
